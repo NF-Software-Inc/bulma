@@ -1,5 +1,7 @@
 @import "../utilities/initial-variables"
 
+$gap-values: ("0": 0rem, "1": 0.25rem, "2": 0.5rem, "3": 0.75rem, "4": 1rem, "5": 1.25rem, "6": 1.5rem, "7": 1.75rem, "8": 2rem) !default
+
 .masonry
   column-count: 3
   margin: $gap
@@ -11,3 +13,51 @@
   @for $i from 2 through 12
     &.is-#{$i}
       column-count: $i
+    +mobile
+      &.is-#{$i}-mobile
+        column-count: $i
+    +tablet
+      &.is-#{$i}-tablet
+        column-count: $i
+    +tablet-only
+      &.is-#{$i}-tablet-only
+        column-count: $i
+    +touch
+      &.is-#{$i}-touch
+        column-count: $i
+    +desktop
+      &.is-#{$i}-desktop
+        column-count: $i
+    +desktop-only
+      &.is-#{$i}-desktop-only
+        column-count: $i
+    +widescreen
+      &.is-#{$i}-widescreen
+        column-count: $i
+    +widescreen-only
+      &.is-#{$i}-widescreen-only
+        column-count: $i
+    +fullhd
+      &.is-#{$i}-fullhd
+        column-count: $i
+    +fullhd-only
+      &.is-#{$i}-fullhd-only
+        column-count: $i
+    +ultrawide
+      &.is-#{$i}-ultrawide
+        column-count: $i
+    +ultrawide-only
+      &.is-#{$i}-ultrawide-only
+        column-count: $i
+    +fourk
+      &.is-#{$i}-4k
+        column-count: $i
+    +fourk-only
+      &.is-#{$i}-4k-only
+        column-count: $i
+    +eightk
+      &.is-#{$i}-8k
+        column-count: $i
+  @each $name, $value in $gap-values
+    &.has-gap-#{$name}
+      column-gap: $value
